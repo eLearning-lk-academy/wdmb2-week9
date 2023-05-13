@@ -91,9 +91,9 @@ $(document).ready(() => {
 
   nextBtn.on("click", () => {
 	let step = form.data("step");
-	$("#step_"+step).hide();
+	$("#step_"+step).fadeOut(300);
 	step++;
-	$("#step_"+step).show();
+	$("#step_"+step).fadeIn(600);
 	form.data("step", step);
 	if(step >1){
 		backBtn.show();
@@ -101,16 +101,16 @@ $(document).ready(() => {
 	if(step == 3){
 		nextBtn.hide();
 	}else{
-		nextBtn.show();
+		// nextBtn.show();
 	}
   })
 
   backBtn.on("click", () => {
 	let step = form.data("step");
 	nextBtn.show();
-	$("#step_"+step).hide();
+	$("#step_"+step).fadeOut(300);
 	step--;
-	$("#step_"+step).show();
+	$("#step_"+step).fadeIn(400);
 	form.data("step", step);
 	if(step == 1){
 		backBtn.hide();
